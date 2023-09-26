@@ -1,0 +1,6 @@
+2023-09-26 10:44:12,628 [INFO]: 1.txt has been created.
+2023-09-26 10:44:12,633 [INFO]: 2.txt has been created.
+2023-09-26 10:44:32,681 [INFO]: 1.txt has been copied.
+2023-09-26 10:44:32,700 [INFO]: 2.txt has been copied.
+2023-09-26 10:44:52,728 [INFO]: 3.txt has been created.
+2023-09-26 10:45:02,743 [INFO]: 3.txt has been deleted.
