@@ -4,6 +4,8 @@
 - [Overview](#overview)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [File Comparison](#file-comparison)
+- [Logging](#logging)
   
 ## Overview
 The provided Python script is a file synchronization program that continuously monitors a source directory and synchronizes any changes (additions, modifications, or deletions) to a replica directory. It uses a simple hash-based file comparison to determine if a file needs synchronization.
@@ -20,9 +22,9 @@ To use the synchronization program, follow these steps:
 3. **Configuration (Optional):** You can configure the source directory, replica directory, log file path, and synchronization time interval by using command-line arguments (see [Configuration](#configuration)).
 
 4. **Run the Script:** Open your terminal or command prompt and run the script using the following command:
-      ```bash
-   python script_name.py
-
+   ```bash
+   python main.py
+  
 ## Configuration
 
 The synchronization program can be configured using command-line arguments. Here are the available configuration options:
@@ -39,4 +41,37 @@ The synchronization program can be configured using command-line arguments. Here
 You can override the default settings by providing these arguments when running the script. For example:
 
 ```bash
-python script_name.py --source /path/to/source --replica /path/to/replica --log-file custom_log.txt --time-interval 30 --additional-option value
+python main.py --source source --replica replica --log-file log.txt --time-interval 30
+```
+## File Comparison
+
+The synchronization program uses MD5 hashing to compare files between the source and replica directories. When the program detects a change in the source directory, it performs the following steps for file comparison:
+
+1. Calculate the MD5 hash of the file in the source directory.
+
+2. Calculate the MD5 hash of the corresponding file in the replica directory (if it exists).
+
+3. Compare the two MD5 hashes. If they match, it means the files are identical, and no further action is taken.
+
+4. If the MD5 hashes do not match, the program replaces the replica file with the source file to ensure synchronization.
+
+This file comparison method ensures that only changed or modified files are synchronized between the directories.
+
+## Logging
+
+All synchronization activities are logged to a specified log file in a structured format. Here's what you can expect in the log file:
+
+- `<timestamp>`: This is the date and time when the activity occurred. It helps you track when each synchronization action took place.
+
+- `[INFO]`: This log level indicates normal synchronization activities. It's followed by a colon and space.
+
+- `[WARNING]` or `[ERROR]`: These log levels may appear if there are issues or errors during synchronization.
+
+- `<message>`: Describes the synchronization activity that took place. For example:
+    - `[INFO]: File example.txt has been copied.` - Indicates a successful file copy.
+    - `[WARNING]: Unable to delete file xyz.txt.` - Indicates a warning when a file couldn't be deleted.
+
+You can configure the log file path using the `--log-file` command-line argument. By examining the log file, you can keep track of all synchronization activities and troubleshoot any issues that may arise during the process.
+
+Feel free to customize the logging section to include specific details or information relevant to your project.
+
