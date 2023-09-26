@@ -20,6 +20,8 @@ To use the synchronization program, follow these steps:
 3. **Configuration (Optional):** You can configure the source directory, replica directory, log file path, and synchronization time interval by using command-line arguments (see [Configuration](#configuration)).
 
 4. **Run the Script:** Open your terminal or command prompt and run the script using the following command:
+      ```bash
+   python script_name.py
 
 ## Configuration
 
@@ -33,7 +35,6 @@ The synchronization program can be configured using command-line arguments. Here
 
 - `--time-interval`: Specify the time interval in seconds for checking changes (default: 10 seconds). You can adjust this interval based on how frequently you want the program to check for changes.
 
-- `--additional-option`: You can add additional configuration options specific to your project. For example, if your program requires API keys or custom settings, you can document them here.
 
 You can override the default settings by providing these arguments when running the script. For example:
 
