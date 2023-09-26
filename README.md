@@ -65,13 +65,9 @@ All synchronization activities are logged to a specified log file in a structure
 
 - `[INFO]`: This log level indicates normal synchronization activities. It's followed by a colon and space.
 
-- `[WARNING]` or `[ERROR]`: These log levels may appear if there are issues or errors during synchronization.
-
 - `<message>`: Describes the synchronization activity that took place. For example:
     - `[INFO]: File example.txt has been copied.` - Indicates a successful file copy.
-    - `[WARNING]: Unable to delete file xyz.txt.` - Indicates a warning when a file couldn't be deleted.
 
 You can configure the log file path using the `--log-file` command-line argument. By examining the log file, you can keep track of all synchronization activities and troubleshoot any issues that may arise during the process.
 
-Feel free to customize the logging section to include specific details or information relevant to your project.
 
