@@ -1,6 +1,6 @@
 # Folder-synchronization-program
 
-##Table of Contents
+## Table of Contents
 - [Overview](#overview)
 - [Usage](#usage)
 - [Configuration](#configuration)
