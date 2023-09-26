@@ -1,7 +1,7 @@
 # Folder-synchronization-program
 
 ##Table of Contents
-* Overview
+* Overview (#overview)
 
 ## Overview
 The provided Python script is a file synchronization program that continuously monitors a source directory and synchronizes any changes (additions, modifications, or deletions) to a replica directory. It uses a simple hash-based file comparison to determine if a file needs synchronization.
